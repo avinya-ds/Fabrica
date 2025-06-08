@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Add some styles for error messages */
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Form login-form">
+            <h2>Login</h2>
+            <form id="loginForm" action="#">
+                <div class="input-box">
+                    <i class='bx bxs-user'></i>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter Your Username*">
+                    <div class="error" id="loginUsernameError">Username is required.</div>
+                </div>
+                <div class="input-box">
+                    <i class='bx bxs-envelope'></i>
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter Your Password*">
+                    <div class="error" id="loginPasswordError">Password is required.</div>
+                </div>
+                <div class="forgot-section">
+                    <span><input type="checkbox" id="rememberMe">Remember Me</span>
+                    <span><a href="#">Forgot Password?</a></span>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p>Or Sign up using</p>
+            <div class="social-media">
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-google'></i>
+                <i class='bx bxl-twitter'></i>
+            </div>
+            <p class="RegisteBtn RegiBtn"><a href="#">Register Now</a></p>
+        </div>
+        
+        <div class="Form Register-form">
+            <br>
+            <h2>Register</h2>
+            <form id="registerForm" action="#">
+                <div class="input-box">
+                    <i class='bx bxs-user'></i>
+                    <label for="regUsername">Username</label>
+                    <input type="text" id="regUsername" placeholder="Enter Your Username*">
+                    <div class="error" id="regUsernameError">Username is required.</div>
+                </div>
+                <div class="input-box">
+                    <i class='bx bxs-envelope'></i>
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" placeholder="Enter Your Password*">
+                    <div class="error" id="regPasswordError">Password is required.</div>
+                </div>
+                <div class="input-box">
+                    <i class='bx bxs-envelope'></i>
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Your Password*">
+                    <div class="error" id="confirmPasswordError">Confirm Password is required.</div>
+                </div>
+                <div class="forgot-section">
+                    <span><input type="checkbox" id="rememberReg">Remember Me</span>
+                    <span><a href="#">Forgot Password?</a></span>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p>Or Sign up using</p>
+            <div class="social-media">
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-google'></i>
+                <i class='bx bxl-twitter'></i>
+            </div>
+            <p class="LoginBtn"><a href="#">Login Now</a></p>
+        </div>
+    </div>
+    <script>
+        const container = document.querySelector(".container");
+        const loginForm = document.querySelector('.login-form');
+        const registerForm = document.querySelector('.Register-form');
+        const regiBtn = document.querySelector('.RegisteBtn');
+        const loginBtn = document.querySelector('.LoginBtn');
+
+        // Login form validation
+        document.getElementById("loginForm").onsubmit = function(event) {
+            event.preventDefault();
+            let valid = true;
+
+            // Get input values
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("loginPassword").value.trim();
+
+            // Validate username
+            if (username === "") {
+                document.getElementById("loginUsernameError").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("loginUsernameError").style.display = "none";
+            }
+
+            // Validate password
+            if (password === "") {
+                document.getElementById("loginPasswordError").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("loginPasswordError").style.display = "none";
+            }
+
+            // If valid, proceed with login (e.g., make an AJAX request)
+            if (valid) {
+                alert("Login successful!");
+                // You can add your login logic here
+            }
+        };
+
+        // Register form validation
+        document.getElementById("registerForm").onsubmit = function(event) {
+            event.preventDefault();
+            let valid = true;
+
+            // Get input values
+            const regUsername = document.getElementById("regUsername").value.trim();
+            const regPassword = document.getElementById("regPassword").value.trim();
+            const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+            // Validate username
+            if (regUsername === "") {
+                document.getElementById("regUsernameError").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("regUsernameError").style.display = "none";
+            }
+
+            // Validate password
+            if (regPassword === "") {
+                document.getElementById("regPasswordError").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("regPasswordError").style.display = "none";
+            }
+
+            // Validate confirm password
+            if (confirmPassword === "") {
+                document.getElementById("confirmPasswordError").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("confirmPasswordError").style.display = "none";
+            }
+
+            // Check if passwords match
+            if (regPassword !== confirmPassword) {
+                alert("Passwords do not match!");
+                valid = false;
+            }
+
+            // If valid, proceed with registration (e.g., make an AJAX request)
+            if (valid) {
+                alert("Registration successful!");
+                // You can add your registration logic here
+            }
+        };
+
+        // Switch between login and register forms
+        regiBtn.addEventListener('click', () => {
+            registerForm.classList.add('active');
+            loginForm.classList.add('active');
+        });
+        
+        loginBtn.addEventListener('click', () => {
+            registerForm.classList.remove('active');
+            loginForm.classList.remove('active');
+        });
+        // Register form validation
+document.getElementById("registerForm").onsubmit = function(event) {
+    event.preventDefault();
+    let valid = true;
+
+    // Get input values
+    const regUsername = document.getElementById("regUsername").value.trim();
+    const regPassword = document.getElementById("regPassword").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+    // Validate username
+    if (regUsername === "") {
+        document.getElementById("regUsernameError").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("regUsernameError").style.display = "none";
+    }
+
+    // Validate password
+    const passwordPattern = /^(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{6,}$/;
+    if (regPassword === "") {
+        document.getElementById("regPasswordError").style.display = "block";
+        valid = false;
+    } else if (!passwordPattern.test(regPassword)) {
+        document.getElementById("regPasswordError").style.display = "block";
+        document.getElementById("regPasswordError").textContent = "Password must be at least 6 characters and contain at least one special character.";
+        valid = false;
+    } else {
+        document.getElementById("regPasswordError").style.display = "none";
+    }
+
+    // Validate confirm password
+    if (confirmPassword === "") {
+        document.getElementById("confirmPasswordError").style.display = "block";
+        valid = false;
+    } else if (regPassword !== confirmPassword) {
+        document.getElementById("confirmPasswordError").style.display = "block";
+        document.getElementById("confirmPasswordError").textContent = "Passwords do not match!";
+        valid = false;
+    } else {
+        document.getElementById("confirmPasswordError").style.display = "none";
+    }
+
+    // If valid, proceed with registration (e.g., make an AJAX request)
+    if (valid) {
+        alert("Registration successful!");
+        // You can add your registration logic here
+    }
+};
+
+    </script>
+</body>
+</html>

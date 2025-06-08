@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shop</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/> -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            .button-group {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px;
+        }
+        
+        .category-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #D3D3D3; /* Light grey background */
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .category-btn:hover {
+            background-color: #A9A9A9; /* Darker grey on hover */
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        
+                
+                </style>
+    </head>
+
+    <body>
+        <section id="header">
+            <a href=""><img src="img/logo4.png" alt="" srcset=""class="logo"></a>
+             <!-- <h5 class="qwitcher-grypen-bold ">Febricadfghjkl</h5> -->
+            <div>
+                <ul id="navbar">
+                    <li><a class="active"href="index.html" >Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login/index.html">Login</a></li>
+                    <li><span class="vishid"><button id="screen-reader-button" tabindex="9" aria-label="screen reader" ><i class="fas fa-volume-up"></i></button></li>
+                    <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <a href="#"id="close"><i class="fa-solid fa-xmark"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <i id="bar"class="fas fa-outdent"></i>
+                <a href="cart.html"><i class="fa-solid fa-shopping-bag"></i></a>
+
+            </div>
+        </section>
+        <section id="page-header">
+            <h2>#stayhome</h2>
+            <p>Save more with coupons & up to 70% off!</p>
+           
+        </section>
+        <div class="button-group">
+            <button class="category-btn" ><a href="shop.html">Men</a></button>
+            <button class="category-btn"><a href="women.html">Women</a></button>
+            <button class="category-btn"><a href="kid.html">Kid</a></button>
+        </div>
+       
+        <section id="product1" class="section-p1">  
+            <div class="pro-container">
+        
+                <div class="pro" data-id="1" data-name="Colorful Floral Shirt" data-price="1500" data-image="img/products/f1.jpg" onclick="window.location.href='sproduct.html';">
+                    <img src="img/products/f1.jpg" alt="Colorful Floral Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Colorful Floral Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹1500</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="2" data-name="Cream Floral Shirt" data-price="1200" data-image="img/products/f2.jpg">
+                    <img src="img/products/f2.jpg" alt="Cream Floral Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cream Floral Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹1200</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="3" data-name="Floral Print Shirt" data-price="991" data-image="img/products/f3.jpg">
+                    <img src="img/products/f3.jpg" alt="Floral Print Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Floral Print Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹991</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="4" data-name="White Floral Print Shirt" data-price="921" data-image="img/products/f4.jpg">
+                    <img src="img/products/f4.jpg" alt="White Floral Print Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>White Floral Print Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹921</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="5" data-name="Ocean Flower Vibes Shirt" data-price="1900" data-image="img/products/f5.jpg">
+                    <img src="img/products/f5.jpg" alt="Ocean Flower Vibes Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Ocean Flower Vibes Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹1900</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="6" data-name="Orange/Blue Fusion Shirt" data-price="1020" data-image="img/products/f6.jpg">
+                    <img src="img/products/f6.jpg" alt="Orange/Blue Fusion Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Orange/Blue Fusion Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹1020</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="7" data-name="Chino Trousers" data-price="₹2500" data-image="img/products/t1.jpg">
+                    <img src="img/products/f7.jpg" alt="Chino Trousers" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Chino Trousers</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹2500</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="8" data-name="Graffiti Dreams T-Shirt" data-price="2980" data-image="img/products/f8.jpg">
+                    <img src="img/products/f8.jpg" alt="Graffiti Dreams T-Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Graffiti Dreams T-Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹2980</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="9" data-name="Sky Blue Shirt" data-price="999" data-image="img/products/n1.jpg">
+                    <img src="img/products/n1.jpg" alt="Sky Blue Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Sky Blue Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹999</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="10" data-name="Stylish Lines Shirt" data-price="1450" data-image="img/products/n8.jpg">
+                    <img src="img/products/n2.jpg" alt="Stylish Lines Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Stylish Lines Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹1450</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="11" data-name="White Shirt" data-price="800" data-image="img/products/n3.jpg">
+                    <img src="img/products/n3.jpg" alt="White Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>White Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹800</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="12" data-name="Light Grey Vintage Wash Shirt" data-price="920" data-image="img/products/n4.jpg">
+                    <img src="img/products/n4.jpg" alt="Light Grey Vintage Wash Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Light Grey Vintage Wash Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹920</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="13" data-name="Denim Blue Shirt" data-price="2000" data-image="img/products/n5.jpg">
+                    <img src="img/products/n5.jpg" alt="Denim Blue Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Denim Blue Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹2000</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="14" data-name="Classic Denim Shorts" data-price="3800" data-image="img/products/n6.jpg">
+                    <img src="img/products/n6.jpg" alt="Classic Denim Shorts" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Classic Denim Shorts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹3800</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="15" data-name="Rust Orange Shirt" data-price="850" data-image="img/products/n7.jpg">
+                    <img src="img/products/n7.jpg" alt="Rust Orange Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Rust Orange Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹850</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+                <div class="pro" data-id="16" data-name="Charcoal Gray Shirt" data-price="899" data-image="img/products/n8.jpg">
+                    <img src="img/products/n8.jpg" alt="Charcoal Gray Shirt" srcset="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹889</h4>
+                    </div>
+                    <a href="cart.html" class="add-to-cart" aria-label="Add To Cart" ><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+        
+            </div>
+        </section>
+       
+        <section id="newsletter"class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up for Newsletters</h4>
+                <p>Get E-mail updates about our latest shop and <span>special offers</span></p>
+            </div>
+            <div class="form">
+                <input type="text" name="" id=""placeholder="your email address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+        <footer class="section-p1">
+            <div class="col">
+                <h4>Contact</h4>
+                <p><strong>Address: </strong>MIT Manipal</p>
+                <p><strong>Phone: </strong>066-4567890</p>
+                <p><strong>Hours: </strong>24 hours</p>
+                <div class="follow">
+                    <h4>Follow us</h4>
+                    <div class="icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest-p"></i>
+                        <i class="fab fa-youtube"></i>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Dilevery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact Us</a>
+
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Whishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+
+            </div>
+            <div class="col install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play</p>
+                <div class="row">
+                    <img src="img/pay/app.jpg" alt="APP Store">
+                    <img src="img/pay/play.jpg" alt="Google Play">
+                </div>
+                <p>Secured Payment Garteways</p>
+                <img src="img/pay/pay.png" alt="Payment Gateways">
+                <div class="copyright">
+                    <p>@2024</p>
+                </div>
+        </footer>
+
+        <script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            const productElement = this.closest('.pro');
+            const productId = productElement.getAttribute('data-id');
+            const productName = productElement.getAttribute('data-name');
+            const productPrice = productElement.getAttribute('data-price');
+            const productImage = productElement.getAttribute('data-image');
+            const productQuantity = 1;
+
+            const product = {
+                id: productId,
+                name: productName,
+                price: productPrice,
+                image: productImage,
+                quantity: productQuantity
+            };
+
+            addToCart(product);
+        });
+    });
+
+    function addToCart(product) {
+        let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+        
+        const existingProduct = cart.find(item => item.id === product.id);
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            cart.push(product);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert("Product added to cart!");
+    }
+</script>
+<script src="script.js"></script>
+<script src="script2.js"></script>
+    
+    </body>
+
+</html>
+
+
+

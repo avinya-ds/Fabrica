@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form id="form">
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="name" placeholder="Name">
+                        <small class="error-message" id="nameError"></small>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email">
+                        <small class="error-message" id="emailError"></small>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password">
+                        <small class="error-message" id="passwordError"></small>
+                    </div>
+                    <p>Forgot password <a href="#" >Click Here!</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn">Sign Up</button>
+                    <button type="button" id="signinBtn" class="disable">Sign In</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script>
+        let signupBtn=document.getElementById("signupBtn");
+        let signinBtn=document.getElementById("signinBtn");
+        let nameField=document.getElementById("nameField");
+        let title=document.getElementById("title");
+
+        // Form and fields
+        let form = document.getElementById("form");
+        let nameInput = document.getElementById("name");
+        let emailInput = document.getElementById("email");
+        let passwordInput = document.getElementById("password");
+        let nameError = document.getElementById("nameError");
+        let emailError = document.getElementById("emailError");
+        let passwordError = document.getElementById("passwordError");
+
+        signinBtn.onclick=function(){
+            nameField.style.maxHeight="0";
+            title.innerHTML="Sign In";
+            signupBtn.classList.add("disable");
+            signinBtn.classList.remove("disable");
+        }
+        
+        signupBtn.onclick=function(){
+            nameField.style.maxHeight="60px";
+            title.innerHTML="Sign Up";
+            signupBtn.classList.remove("disable");
+            signinBtn.classList.add("disable");
+        }
+
+        // Validation functions
+        function validateName() {
+            const name = nameInput.value.trim();
+            if (name === "") {
+                nameError.innerHTML = "Name is required";
+                return false;
+            } else {
+                nameError.innerHTML = "";
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            const email = emailInput.value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                emailError.innerHTML = "Email is required";
+                return false;
+            } else if (!emailPattern.test(email)) {
+                emailError.innerHTML = "Invalid email format";
+                return false;
+            } else {
+                emailError.innerHTML = "";
+                return true;
+            }
+        }
+
+        function validatePassword() {
+            const password = passwordInput.value.trim();
+            if (password === "") {
+                passwordError.innerHTML = "Password is required";
+                return false;
+            } else if (password.length < 6) {
+                passwordError.innerHTML = "Password must be at least 6 characters long";
+                return false;
+            } else {
+                passwordError.innerHTML = "";
+                return true;
+            }
+        }
+
+        // Validate the form on submit
+        signupBtn.onclick = function (event) {
+            let isNameValid = validateName();
+            let isEmailValid = validateEmail();
+            let isPasswordValid = validatePassword();
+
+            if (isNameValid && isEmailValid && isPasswordValid) {
+                alert("Form is successfully submitted!");
+                // Submit the form or do additional processing
+            } else {
+                event.preventDefault(); // Prevent form submission if invalid
+            }
+        };
+    </script>
+</body>
+</html>

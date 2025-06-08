@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <section id="header">
+        <a href=""><img src="img/logo4.png" alt="" srcset=""class="logo"></a>
+         <!-- <h5 class="qwitcher-grypen-bold ">Febricadfghjkl</h5> -->
+        <div>
+            <ul id="navbar">
+                <li><a class="active"href="index.html" >Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login/index.html">Login</a></li>
+                <li><span class="vishid"><button id="screen-reader-button"  aria-label="screen reader" ><i class="fas fa-volume-up"></i></button></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <a href="#"id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar"class="fas fa-outdent"></i>
+            <a href="cart.html"><i class="fa-solid fa-shopping-bag"></i></a>
+
+        </div>
+    </section>
+
+    <section id="page-header1" class="about-header">
+        <h2>#Cart</h2>
+        <p>Proceed To Cart!</p>
+    </section>
+
+    <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+    </section>
+
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div>
+                <input type="text" placeholder="Enter Your Coupon">
+                <button class="normal">Apply</button>
+            </div>
+        </div>
+
+        <div id="subtotal">
+            <h3>Cart Total</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td>₹0.00</td> <!-- Update dynamically -->
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>₹0.00</strong></td> <!-- Update dynamically -->
+                </tr>
+            </table>
+            <button class="normal">Proceed To Checkout</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img src="img/logo.png" class="logo" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>MIT Manipal</p>
+            <p><strong>Phone:</strong>066-4567890</p>
+            <p><strong>Hours:</strong>24 hours</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.png" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="">
+            <div class="copyright">
+                <p>@2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Cart Update -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cartItemsContainer = document.getElementById('cart-items');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Function to render the cart
+            function renderCart() {
+                cartItemsContainer.innerHTML = '';
+                let subtotal = 0;
+
+                // If the cart is empty, update subtotal and return
+                if (cart.length === 0) {
+                    updateTotal(0);
+                    return;
+                }
+
+                cart.forEach(item => {
+                    const itemSubtotal = item.price * item.quantity;
+                    subtotal += itemSubtotal;
+
+                    cartItemsContainer.innerHTML += `
+                        <tr>
+                            <td><a href="#" class="remove-item" data-id="${item.id}"><i class="far fa-times-circle"></i></a></td>
+                            <td><img src="${item.image}" alt=""></td>
+                            <td>${item.name}</td>
+                            <td>₹${item.price}</td>
+                            <td><input type="number" value="${item.quantity}" class="quantity-input" data-id="${item.id}"></td>
+                            <td>₹${itemSubtotal.toFixed(2)}</td>
+                        </tr>
+                    `;
+                });
+
+                // Update subtotal and total
+                updateTotal(subtotal);
+            }
+
+            // Function to update subtotal and total in the cart
+            function updateTotal(subtotal) {
+                document.querySelector('#subtotal table tr:nth-child(1) td:nth-child(2)').textContent = `₹${subtotal.toFixed(2)}`;
+                document.querySelector('#subtotal table tr:nth-child(3) td:nth-child(2)').textContent = `₹${subtotal.toFixed(2)}`;
+            }
+
+            // Event listener to update quantity
+            cartItemsContainer.addEventListener('change', function (event) {
+                if (event.target.classList.contains('quantity-input')) {
+                    const productId = event.target.getAttribute('data-id');
+                    const newQuantity = parseInt(event.target.value);
+
+                    // Update the cart with new quantity
+                    cart = cart.map(item => {
+                        if (item.id === productId) {
+                            item.quantity = newQuantity;
+                        }
+                        return item;
+                    });
+
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    renderCart();
+                }
+            });
+
+            // Event listener to remove item
+            cartItemsContainer.addEventListener('click', function (event) {
+                if (event.target.closest('.remove-item')) {
+                    const productId = event.target.closest('.remove-item').getAttribute('data-id');
+                    cart = cart.filter(item => item.id !== productId);
+
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    renderCart();
+                }
+            });
+
+            // Render the cart on page load
+            renderCart();
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+
+</body>
+
+</html>
