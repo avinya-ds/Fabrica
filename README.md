@@ -29,19 +29,19 @@ This is a front-end e-commerce website template built as part of a Web Technolog
 
 ## Folder Structure
 
+```bash
 FABRICA/
 │
-├── index.html # Main homepage
-├── shop.html # General shop page
-├── login/ # Login form
-├── login2/ # Alternate login flow
-├── form.html # Sample form
-├── blog.html, about.html # Informational pages
+├── index.html              # Main homepage
+├── shop.html               # General shop page
+├── login/                  # Login form
+├── login2/                 # Alternate login flow
+├── form.html               # Sample form
+├── blog.html, about.html   # Informational pages
 ├── script.js, form_validation1.js
 ├── style.css, style2.css
-├── img/ # Static images
-└── *.html # Various other layout pages
-```
+├── img/                    # Static images
+└── *.html                  # Various other layout pages
 
 ---
 
