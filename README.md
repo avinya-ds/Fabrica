@@ -42,6 +42,7 @@ FABRICA/
 ├── style.css, style2.css
 ├── img/                    # Static images
 └── *.html                  # Various other layout pages
+```
 
 ---
 
