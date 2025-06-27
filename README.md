@@ -1,4 +1,4 @@
-# MCA WT – E-Commerce Web 
+# FABRICA – E-Commerce Web 
 
 This is a front-end e-commerce website template built as part of a Web Technologies coursework project. It includes multiple product listing pages, user login and registration forms, interactive validation, and clean modern styling.
 
@@ -41,6 +41,7 @@ FABRICA/
 ├── style.css, style2.css
 ├── img/ # Static images
 └── *.html # Various other layout pages
+```
 
 ---
 
